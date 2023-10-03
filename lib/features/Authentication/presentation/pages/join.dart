@@ -19,7 +19,7 @@ class _JoinAppState extends State<JoinApp> with SingleTickerProviderStateMixin{
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, initialIndex: 1, length: 2);
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
   }
 
 
@@ -36,8 +36,8 @@ class _JoinAppState extends State<JoinApp> with SingleTickerProviderStateMixin{
         ),
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Theme.of(context).accentColor,
-          labelColor: Theme.of(context).accentColor,
+          indicatorColor: Theme.of(context).colorScheme.secondary,
+          labelColor: Theme.of(context).colorScheme.secondary,
           unselectedLabelColor: Colors.grey,
           labelStyle: const TextStyle(
             fontSize: 20.0,

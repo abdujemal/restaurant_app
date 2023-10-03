@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurant_app/features/Authentication/presentation/bloc/login_controller/login_event.dart';
-import 'package:restaurant_app/features/Database/presentation/controller/food%20controlelr/food_bloc.dart';
 import 'package:restaurant_app/features/Database/presentation/screens/cart.dart';
 import 'package:restaurant_app/features/Database/presentation/screens/favorite_screen.dart';
 import 'package:restaurant_app/features/Database/presentation/screens/home.dart';
@@ -11,9 +7,6 @@ import 'package:restaurant_app/features/Authentication/presentation/pages/profil
 import 'package:restaurant_app/features/Database/presentation/screens/search.dart';
 import 'package:restaurant_app/core/util/const.dart';
 import 'package:restaurant_app/features/Database/presentation/widget/badge.dart';
-import 'package:restaurant_app/injection.dart';
-
-import '../../../Authentication/presentation/bloc/login_controller/login_bloc.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -80,7 +73,7 @@ class _MainScreenState extends State<MainScreen> {
                   size: 24.0,
                 ),
                 color: _page == 0
-                    ? Theme.of(context).accentColor
+                    ? Theme.of(context).colorScheme.secondary
                     : Theme.of(context).textTheme.caption!.color,
                 onPressed: () => _pageController!.jumpToPage(0),
               ),
@@ -90,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                   size: 24.0,
                 ),
                 color: _page == 1
-                    ? Theme.of(context).accentColor
+                    ? Theme.of(context).colorScheme.secondary
                     : Theme.of(context).textTheme.caption!.color,
                 onPressed: () => _pageController!.jumpToPage(1),
               ),
@@ -101,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
                   color: Theme.of(context).primaryColor,
                 ),
                 color: _page == 2
-                    ? Theme.of(context).accentColor
+                    ? Theme.of(context).colorScheme.secondary
                     : Theme.of(context).textTheme.caption!.color,
                 onPressed: () => _pageController!.jumpToPage(2),
               ),
@@ -111,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                   size: 24.0,
                 ),
                 color: _page == 3
-                    ? Theme.of(context).accentColor
+                    ? Theme.of(context).colorScheme.secondary
                     : Theme.of(context).textTheme.caption!.color,
                 onPressed: () => _pageController!.jumpToPage(3),
               ),
@@ -121,7 +114,7 @@ class _MainScreenState extends State<MainScreen> {
                   size: 24.0,
                 ),
                 color: _page == 4
-                    ? Theme.of(context).accentColor
+                    ? Theme.of(context).colorScheme.secondary
                     : Theme.of(context).textTheme.caption!.color,
                 onPressed: () => _pageController!.jumpToPage(4),
               ),
@@ -133,8 +126,9 @@ class _MainScreenState extends State<MainScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           elevation: 4.0,
-          child: const Icon(
+          child: Icon(
             Icons.search,
+            color: Theme.of(context).textTheme.caption!.color,
           ),
           onPressed: () => _pageController!.jumpToPage(2),
         ),

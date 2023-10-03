@@ -73,14 +73,14 @@ class _WalkthroughState extends State<Walkthrough> {
               "Next",
               style: TextStyle(
                 fontWeight: FontWeight.w800,
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
             done: Text(
               "Done",
               style: TextStyle(
                 fontWeight: FontWeight.w800,
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
           ),
@@ -101,7 +101,7 @@ class _WalkthroughState extends State<Walkthrough> {
         titleTextStyle: TextStyle(
           fontSize: 28.0,
           fontWeight: FontWeight.w600,
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).colorScheme.secondary,
         ),
         bodyTextStyle: TextStyle(fontSize: 15.0),
 //        dotsDecorator: DotsDecorator(

@@ -171,7 +171,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w900,
-                      color: Theme.of(context).accentColor,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ],
@@ -309,7 +309,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
           ),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).accentColor,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
           onPressed: () {
             context.read<CartBloc>().add(AddToCartEvent(CartModel(

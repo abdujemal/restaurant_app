@@ -1,14 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurant_app/features/Authentication/presentation/bloc/login_controller/login_event.dart';
 import 'package:restaurant_app/features/Authentication/presentation/bloc/login_controller/login_state.dart';
-import 'package:restaurant_app/features/Authentication/presentation/pages/join.dart';
 import 'package:restaurant_app/features/Database/presentation/screens/main_screen.dart';
 import 'package:restaurant_app/features/Database/presentation/screens/walkthrough.dart';
 import 'package:restaurant_app/core/util/const.dart';
-import 'package:restaurant_app/injection.dart';
 
 import '../../../Authentication/presentation/bloc/login_controller/login_bloc.dart';
 
@@ -42,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 Icon(
                   Icons.fastfood,
                   size: 150.0,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 const SizedBox(width: 40.0),
                 Container(
@@ -55,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.w700,
-                      color: Theme.of(context).accentColor,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ),

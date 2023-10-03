@@ -23,35 +23,33 @@ class _CartScreenState extends State<CartScreen>
         padding: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
         child: BlocBuilder<CartBloc, CartState>(
           builder: (context, state) {
-            return 
-            state.cartList.isEmpty?
-            const Center(child: Text("Empty cart"),):
-             ListView.builder(
-              itemCount: state.cartList.length,
-              itemBuilder: (BuildContext context, int index) {
-                CartModel cartModel = state.cartList[index];
-                return CartItem(
-                  cartModel: cartModel,
-                  onDecrease: () {
-                    context
-                        .read<CartBloc>()
-                        .add(DecreaseQuantityEvent(cartModel));
-                  },
-                  onIncrease: () {
-                    context
-                        .read<CartBloc>()
-                        .add(IncreaseQuantityEvent(cartModel));
-                  },
-                );
-              },
-            );
+            return state.cartList.isEmpty
+                ? const Center(
+                    child: Text("Empty cart"),
+                  )
+                : ListView.builder(
+                    itemCount: state.cartList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      CartModel cartModel = state.cartList[index];
+                      return CartItem(
+                        cartModel: cartModel,
+                        onDecrease: () {
+                          context
+                              .read<CartBloc>()
+                              .add(DecreaseQuantityEvent(cartModel));
+                        },
+                        onIncrease: () {
+                          context
+                              .read<CartBloc>()
+                              .add(IncreaseQuantityEvent(cartModel));
+                        },
+                      );
+                    },
+                  );
           },
         ),
       ),
-
-      floatingActionButton:
-       
-       FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         tooltip: "Checkout",
         onPressed: () {
           Navigator.of(context).push(
@@ -62,10 +60,9 @@ class _CartScreenState extends State<CartScreen>
             ),
           );
         },
-        child: const Icon(
-          Icons.arrow_forward,
-        ),
         heroTag: Object(),
+        child: Icon(Icons.arrow_forward,
+            color: Theme.of(context).textTheme.caption!.color),
       ),
     );
   }

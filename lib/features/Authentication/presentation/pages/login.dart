@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w700,
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).colorScheme.secondary,
               ),
             ),
           ),
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.w500,
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     onPressed: () {
@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).accentColor,
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
                     ),
                     child: Text(
                       "LOGIN".toUpperCase(),
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           const SizedBox(height: 10.0),
           Divider(
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
           const SizedBox(height: 10.0),
           BlocConsumer<LoginBloc, LoginState>(

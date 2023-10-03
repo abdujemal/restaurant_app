@@ -16,29 +16,37 @@ class Constants {
   static Color ratingBG = const Color.fromARGB(255, 249, 213, 51);
 
   static ThemeData lightTheme = ThemeData(
-    backgroundColor: lightBG,
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      onSecondary: lightAccent,
+    ),
+    brightness: Brightness.light,
     primaryColor: lightPrimary,
-    accentColor: lightAccent,
+    hintColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      iconTheme: IconThemeData(
+        color: lightAccent,
+      ),
+      toolbarTextStyle: TextTheme(
         titleLarge: TextStyle(
           color: darkBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
         ),
-      ),
-      iconTheme: IconThemeData(
-        color: lightAccent,
-      ),
+      ).bodyText2,
+      titleTextStyle: TextTheme(
+        titleLarge: TextStyle(
+          color: darkBG,
+          fontSize: 18.0,
+          fontWeight: FontWeight.w800,
+        ),
+      ).headline6,
     ),
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    backgroundColor: darkBG,
     primaryColor: darkPrimary,
-    accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
     // cursorColor: darkAccent,
     appBarTheme: const AppBarTheme(
@@ -57,6 +65,19 @@ class Constants {
     // ),
     iconTheme: IconThemeData(
       color: darkAccent,
+    ),
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      secondary: darkAccent,
+      background: darkBG,
+      brightness: Brightness.dark,
+      error: Colors.red,
+      primary: darkPrimary,
+      onBackground: darkBG,
+      onError: Colors.red,
+      onPrimary: darkPrimary,
+      onSecondary: darkAccent,
+      onSurface: darkBG,
+      surface: darkBG,
     ),
   );
 
@@ -153,33 +174,34 @@ class Constants {
               children: [
                 Container(
                   // width: 110,
-                  height: h*.8,
+                  height: h * .8,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     color: Colors.red,
                   ),
-                  margin:
-                      const EdgeInsets.fromLTRB(4, 6, 4, 5),
+                  margin: const EdgeInsets.fromLTRB(4, 6, 4, 5),
                 ),
                 Container(
-                  height: 14, 
-                  width: 120, 
-                  margin:
-                      const EdgeInsets.fromLTRB(4, 6, 4, 5),
+                  height: 14,
+                  width: 120,
+                  margin: const EdgeInsets.fromLTRB(4, 6, 4, 5),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     color: Colors.red,
-                  ),),
-                SizedBox(height: 5,),
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
                 Container(
-                  height: 10, 
-                  width: 100, 
-                  margin:
-                      const EdgeInsets.fromLTRB(4, 6, 4, 5),
+                  height: 10,
+                  width: 100,
+                  margin: const EdgeInsets.fromLTRB(4, 6, 4, 5),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
                     color: Colors.red,
-                  ),),
+                  ),
+                ),
               ],
             );
           },

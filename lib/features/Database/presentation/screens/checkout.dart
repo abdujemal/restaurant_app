@@ -43,7 +43,7 @@ class _CheckoutState extends State<Checkout> {
             tooltip: "Back",
             icon: Icon(
               Icons.clear,
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             onPressed: () => Navigator.pop(context),
           ),
@@ -109,7 +109,7 @@ class _CheckoutState extends State<Checkout> {
                         leading: Icon(
                           FontAwesomeIcons.creditCard,
                           size: 50.0,
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                         trailing: IconButton(
                           onPressed: () {},
@@ -199,7 +199,7 @@ class _CheckoutState extends State<Checkout> {
                           hintText: "Coupon Code",
                           prefixIcon: Icon(
                             Icons.redeem,
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
                           hintStyle: TextStyle(
                             fontSize: 15.0,
@@ -231,7 +231,7 @@ class _CheckoutState extends State<Checkout> {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w900,
-                                color: Theme.of(context).accentColor,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                             Text(
@@ -251,7 +251,7 @@ class _CheckoutState extends State<Checkout> {
                         child: ElevatedButton(
                           // ignore: deprecated_member_use
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Theme.of(context).accentColor,
+                            backgroundColor: Theme.of(context).colorScheme.secondary,
                           ),
 
                           child: Text(

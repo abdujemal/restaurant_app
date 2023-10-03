@@ -10,10 +10,13 @@ import 'package:restaurant_app/features/Database/presentation/screens/splash.dar
 import 'package:restaurant_app/injection.dart';
 import 'core/util/const.dart';
 import 'features/Authentication/presentation/bloc/login_controller/login_bloc.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   di_setup();
   runApp(
     MultiProvider(
@@ -33,10 +36,9 @@ class MyApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => di<LoginBloc>()..add(GetUserEvent())),
-            BlocProvider(create: (_)=> di<CartBloc>()),
-            BlocProvider(create: (_)=> di<FoodBloc>()..add(GetFoodsEvent()))
-            ],
-
+            BlocProvider(create: (_) => di<CartBloc>()),
+            BlocProvider(create: (_) => di<FoodBloc>()..add(GetFoodsEvent()))
+          ],
           child: MaterialApp(
             key: appProvider.key,
             debugShowCheckedModeBanner: false,
@@ -45,19 +47,19 @@ class MyApp extends StatelessWidget {
             theme: appProvider.theme.copyWith(
               appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.transparent,
-              //   elevation: 0,
+                //   elevation: 0,
                 actionsIconTheme: IconThemeData(color: Colors.grey),
-              //   // textTheme: TextTheme(
-              //   //     titleLarge: TextStyle(
-              //   //     color: Colors.black,
-              //   //     fontSize: 18.0,
-              //   //     fontWeight: FontWeight.w800,
-              //   //   ),
-              //   // ),
-              //   titleTextStyle: TextStyle(
-              //       color: Colors.black,
-              //       fontSize: 20,
-              //       fontWeight: FontWeight.w600),
+                //   // textTheme: TextTheme(
+                //   //     titleLarge: TextStyle(
+                //   //     color: Colors.black,
+                //   //     fontSize: 18.0,
+                //   //     fontWeight: FontWeight.w800,
+                //   //   ),
+                //   // ),
+                //   titleTextStyle: TextStyle(
+                //       color: Colors.black,
+                //       fontSize: 20,
+                //       fontWeight: FontWeight.w600),
               ),
             ),
             darkTheme: Constants.darkTheme,

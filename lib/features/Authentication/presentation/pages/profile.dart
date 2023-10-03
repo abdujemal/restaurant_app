@@ -8,7 +8,6 @@ import 'package:restaurant_app/features/Authentication/presentation/bloc/login_c
 import 'package:restaurant_app/features/Authentication/presentation/pages/join.dart';
 import 'package:restaurant_app/features/Authentication/presentation/widget/editable_profile.dart';
 import 'package:restaurant_app/features/Authentication/presentation/widget/uneditable_profile.dart';
-import 'package:restaurant_app/features/Database/presentation/screens/splash.dart';
 import 'package:restaurant_app/core/util/const.dart';
 
 import '../../../../core/providers/app_provider.dart';
@@ -114,7 +113,7 @@ class _ProfileState extends State<Profile> {
                                               fontSize: 13.0,
                                               fontWeight: FontWeight.w400,
                                               color:
-                                                  Theme.of(context).accentColor,
+                                                  Theme.of(context).colorScheme.secondary,
                                             ),
                                             overflow: TextOverflow.ellipsis,
                                           ),
@@ -179,7 +178,7 @@ class _ProfileState extends State<Profile> {
                                   .setTheme(Constants.lightTheme, "light");
                             }
                           },
-                          activeColor: Theme.of(context).accentColor,
+                          activeColor: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
               ],

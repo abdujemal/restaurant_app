@@ -37,7 +37,7 @@ class _HomeCategoryState extends State<HomeCategory> {
                 padding: EdgeInsets.only(left: 0.0, right: 10.0),
                 child: Icon(
                   widget.icon,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(width: 5),

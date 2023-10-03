@@ -27,7 +27,7 @@ class AppProvider extends ChangeNotifier{
     theme = value;
     SharedPreferences.getInstance().then((prefs){
       prefs.setString("theme", c).then((val){
-        SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
           statusBarColor: c == "dark" ? Constants.darkPrimary : Constants.lightPrimary,
           statusBarIconBrightness: c == "dark" ? Brightness.light:Brightness.dark,

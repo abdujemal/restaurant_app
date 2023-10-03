@@ -184,7 +184,7 @@ class _EditableProfileState extends State<EditableProfile> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: Theme.of(context).accentColor,
+                                backgroundColor: Theme.of(context).colorScheme.secondary,
                               ),
                               child: Text(
                                 "Save Changes".toUpperCase(),
